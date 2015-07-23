@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: WWMMYT4s9Om/DttKDjfolw==
+SHA1-Digest: cM3s8YhVYYAvQWcRXkA0JV4rQ30=
+
+Name: bootstrap.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: MPJg6WRauWlg5x+MmNLtpA==
+SHA1-Digest: YkW5+HXA/8vz+xDePHJYMastzss=
+
+Name: images/search16.png
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 0TZOlL2cs0Y1yQGSAUHw5g==
+SHA1-Digest: zgLwNszTbguDwtHNjAppwtw7a7w=
+
+Name: scripts/helper.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: Lduje9Cxy/qf56r8YruZcA==
+SHA1-Digest: R6KtfuwcYJHrDIlHB3XNrSiBq0s=
+
+Name: scripts/utils.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: U67zX2tQyq8/ldsChCzpwg==
+SHA1-Digest: Cl5SiSk42DJXxY23eX9gI2YA2+A=
+
+Name: styles/browser.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: STni+zAck7+Sc6kTLq+Udg==
+SHA1-Digest: 6Tkbw+HLaQquR+CU4f6OPpPkhcY=
+

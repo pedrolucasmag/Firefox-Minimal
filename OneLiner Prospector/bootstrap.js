@@ -255,7 +255,7 @@ function startup({id}) AddonManager.getAddonByID(id, function(addon) {
 
   // Make sure fullscreen always shows the toolbar without animation
   const AUTOHIDE_PREF = "browser.fullscreen.autohide";
-  Services.prefs.setBoolPref(AUTOHIDE_PREF, false);
+  Services.prefs.setBoolPref(AUTOHIDE_PREF, true);
   unload(function() Services.prefs.clearUserPref(AUTOHIDE_PREF));
 
   // Make the back/forward buttons tall enough for edge-clicks in fullscreen
@@ -266,7 +266,7 @@ function startup({id}) AddonManager.getAddonByID(id, function(addon) {
     // Increase the height extra to fill in empty space above it
     let back = document.getElementById("back-button");
     let forward = document.getElementById("forward-button");
-    back.style.height = forward.style.height = "30px";
+    //back.style.height = forward.style.height = "30px";
     unload(function() back.style.height = forward.style.height = "");
   });
 })

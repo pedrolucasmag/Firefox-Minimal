@@ -14,26 +14,56 @@
     border-radius: 2px 0 0 2px !important;
     padding: 2px !important;
     margin-left: 2px !important;
-    height: 19px !important;
+    height: 18px !important;
     margin: 0px !important;
     width: auto !important;
     background-color: rgba(0, 240, 255, 0) !important;
 }
+
 /* Change the big round forward button for a smaller rectangular one */
 :root #forward-button > .toolbarbutton-icon {
     -moz-image-region: rect(0, 72px, 18px, 54px);
     border-radius: 2px 0 0 2px !important;
     padding:2px !important;
     margin-left: 2px !important;
-    height: 18px !important;
+    height: 17px !important;
     margin: 0px !important;
     width: auto !important;
     border: none !important;
     background-color: rgba(0, 240, 255, 0) !important;
 }
 
-/* Hover Foward / Back Button */
+/* Tab Audio White */
 
+.tab-icon-sound[soundplaying] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white") !important;
+}
+
+.tab-icon-sound[soundplaying]:hover {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-hover") !important;
+}
+
+.tab-icon-sound[soundplaying]:hover:active {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-pressed") !important;
+}
+
+.tab-icon-sound[muted] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white") !important;
+}
+
+.tab-icon-sound[muted]:hover {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-hover") !important;
+}
+
+.tab-icon-sound[muted]:hover:active {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-pressed") !important;
+}
+
+
+/* fix white bg when opening new tabs */
+browser, browser.display.background_color, tabbrowser tabpanels { 
+    background-color: rgb(32, 34, 45) !important; 
+}
 
 /* Shrink tab titles by 10% */
 
@@ -67,14 +97,11 @@
     background-clip: padding-box !important;
     color: rgb(250, 240, 230) !important;
 }
-#TabsToolbar .tabbrowser-tab:not([pinned]) {
-    margin: 0 !important;
-}
 #TabsToolbar .tabbrowser-tab[selected] {
     background: rgb(32, 34, 45) !important;
     background-clip: padding-box !important;
     border-color: rgba(0, 0, 0, .25) !important;
-    color: rgb(114, 161, 156) !important;
+    color: rgb(255, 255, 255) !important;
 }
 #TabsToolbar .tab-background {
     margin: 0 !important;
@@ -133,6 +160,41 @@ Color * #TabsToolbar {
     text-shadow: none!important;
     color: #18191a !important;
 }
+
+.tabbrowser-tab .tab-label { 
+    color: rgb(190, 180, 170) !important; 
+    font-weight: bold;
+}
+
+/* removes seperators between pinned tabs */
+
+#TabsToolbar .tabbrowser-tab:after,
+
+#TabsToolbar .tabbrowser-tab:before {
+
+    display: none !important;
+
+}
+
+/* remove shitty fog */
+#TabsToolbar:not(:-moz-lwtheme)::after {
+    display: none;
+}
+
+
+/* menu bar color */
+
+#main-menubar, #toolbar-menubar, #menubar-items, menubar > menu {
+    background-color: rgb(32, 34, 45) !important;
+    color: rgb(190, 180, 170) !important; 
+    text-shadow: none !important;
+    border: none !important;
+}
+
+tab[selected="true"] .tab-label {
+color: rgb(114, 161, 156) !important;
+font-weight: bold;
+} 
 /* Nav-bar Color */
 
 toolbar,
@@ -147,7 +209,7 @@ nav-bar,
 
 #urlbar {
     background-color: rgb(32, 34, 45) !important;
-    color: rgb(250, 240, 230) !important;
+    color: rgb(190, 180, 170) !important;
 }
 
 #urlbar ::-moz-selection {
@@ -211,27 +273,9 @@ toolbarbutton dropmarker,
 #urlbar[focused] {
     border-color: #000000 !important;
 	box-shadow: none !important;
-}
+}   
 /* Tabs toolbar tab close button (Fx31+) */
 
-#main-window #navigator-toolbox #TabsToolbar #tabbrowser-tabs .tabbrowser-tab .tab-close-button,
-#navigator-toolbox #TabsToolbar #tabs-closebutton,
-#navigator-toolbox #TabsToolbar #ctraddon_tabs-closebutton {
-    -moz-image-region: rect(0, 20px, 20px, 0) !important;
-}
-#main-window #navigator-toolbox #TabsToolbar #tabbrowser-tabs .tabbrowser-tab .tab-close-button:hover,
-#navigator-toolbox #TabsToolbar #tabs-closebutton:hover,
-#navigator-toolbox #TabsToolbar #ctraddon_tabs-closebutton:hover {
-    -moz-image-region: rect(0, 40px, 20px, 20px) !important;
-}
-#main-window #navigator-toolbox #TabsToolbar #tabbrowser-tabs .tabbrowser-tab .tab-close-button:hover:active,
-#navigator-toolbox #TabsToolbar #tabs-closebutton:hover:active,
-#navigator-toolbox #TabsToolbar #ctraddon_tabs-closebutton:hover:active {
-    -moz-image-region: rect(0, 60px, 20px, 40px) !important;
-}
-#main-window #navigator-toolbox #TabsToolbar #tabbrowser-tabs .tabbrowser-tab .tab-close-button {
-    opacity: 1.0 !important;
-}
 #TabsToolbar .close-icon > .toolbarbutton-icon {
     width: 16px !important;
 }
@@ -315,7 +359,7 @@ display:none!important;
 #main-window[sizemode="normal"] .titlebar-button > .toolbarbutton-icon,
 #main-window[sizemode="maximized"] .titlebar-button > .toolbarbutton-icon {
   width: 12px;
-  height: 12px;
+  height:   12px;
 }
 
 .titlebar-placeholder[type="caption-buttons"] {
@@ -333,30 +377,33 @@ display:none!important;
 
 #main-window[sizemode="normal"] #titlebar-min,
 #main-window[sizemode="maximized"] #titlebar-min  {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white) !important;
 }
 #main-window[sizemode="normal"] #titlebar-max{
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#maximize-white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#maximize-white) !important;
 }
 #main-window[sizemode="maximized"] #titlebar-max {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore-white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore-white) !important;
 }
 #main-window[sizemode="normal"] #titlebar-close,
 #main-window[sizemode="maximized"] #titlebar-close  {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white) !important;
 }
 
 #main-window[sizemode="normal"] #titlebar-close:hover,
 #main-window[sizemode="maximized"] #titlebar-close:hover  {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white) !important;
+  background:transparent !important;
 }
 #main-window[sizemode="normal"] .titlebar-button:hover,
 #main-window[sizemode="maximized"] .titlebar-button:hover {
   background-color: rgb(0,0,0);
+  background:transparent !important;  
 }
 #main-window[sizemode="normal"] .titlebar-button:hover:active,
 #main-window[sizemode="maximized"] .titlebar-button:hover:active {
   background-color: rgb(0,0,0);
+  background:transparent !important;  
 }
 #main-window[sizemode="normal"] #titlebar-close:hover,
 #main-window[sizemode="maximized"] #titlebar-close:hover {
@@ -365,4 +412,154 @@ display:none!important;
 #main-window[sizemode="normal"] #titlebar-close:hover:active,
 #main-window[sizemode="maximized"] #titlebar-close:hover:active {
   background-color: hsl(0, 0, 0);
+}
+
+
+
+/** About Blank Color **/
+
+@-moz-document url("about:blank"), url("about:newtab") {
+* {
+background-color:rgb(32, 34, 45);
+}
+
+}
+
+/** Remove Newtab Customize Button **/
+#newtab-customize-button {
+    display: none !important 
+}
+
+/** Loading Spin **/
+
+.tab-throbber[progress] {
+    list-style-image: url("file:///C:/Portable/FirefoxPortable/Data/profile/chrome/loading.png") !important;
+}
+
+:-moz-any(#back-button, #forward-button),
+#bookmarks-menu-button  > .dropmarker-icon {
+  list-style-image: url(chrome://browser/skin/Toolbar-inverted.png) !important;
+}
+
+
+/* Background color of the toolbox and removes a white lite at the bottom of it */
+
+
+#navigator-toolbox::after{
+background:#000000 !important;
+}
+
+
+/** Firefox Scrollbar **/
+/* AGENT_SHEET */
+scrollbarbutton[sbattr=scrollbar-up-top], scrollbarbutton[sbattr=scrollbar-down-top], scrollbarbutton[sbattr=scrollbar-up-bottom], scrollbarbutton[sbattr=scrollbar-down-bottom] {
+    -moz-appearance: none!important;
+    display: none!important;
+}
+scrollbar[orient=vertical] {
+    -moz-margin-start: -15px;
+    min-width: 15px!important;
+    max-width: 15px!important;
+    -moz-appearance: none!important;
+    position: relative;
+    background-color: transparent!important;
+    background-image: none!important;
+    border: 0;
+    z-index: 2147483647;
+    -moz-box-align: start;
+    padding: 1px 1px 1px 6px!important;
+}
+scrollbar[orient=horizontal] {
+    margin-top: -15px;
+    min-height: 15px;
+    max-height: 15px;
+    -moz-appearance: none!important;
+    position: relative;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    z-index: 2147483647;
+    -moz-box-align: start;
+    padding: 6px 11px 1px 1px!important;
+}
+scrollbar thumb {
+    -moz-appearance: none!important;
+    background-color: rgba(80, 80, 80, .5);
+    border-radius: 8px;
+    border: 0;
+}
+scrollbar[orient=vertical] thumb {
+    min-height: 20px!important;
+    min-width: 15px!important;
+    max-width: 15px!important;
+}
+scrollbar[orient=horizontal] thumb {
+    min-width: 20px!important;
+    min-height: 15px!important;
+    max-height: 15px!important;
+}
+scrollbar thumb:active, scrollbar thumb:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+html div scrollbar {
+    -moz-margin-start: 0!important;
+}
+
+/** Address Bar as Icon **/
+
+
+toolbar #urlbar-container, toolbar #urlbar {
+  min-width: unset !important;
+  width: unset !important;
+  max-width: unset !important;
+  
+}
+
+toolbar #urlbar {
+  min-height:10px!Important;
+  opacity:1!Important;
+  min-width:16px!important;
+  transition:0.4s!important;
+  padding-left:35px!Important;
+  padding-right:10px!important;
+  overflow:hidden!Important;
+  background:url(file:///C:/Portable/FirefoxPortable/Data/profile/chrome/link.png)!important;
+  background-size:18px !important;
+  background-repeat:no-repeat!important;
+  border:none !important;
+  margin-top: 2px !important;  
+}
+
+toolbar #urlbar[focused] {
+  background:none !important;  
+  min-width:350px !important;
+  padding-left:3px!Important;
+  padding-right:3px!important;  
+  opacity:1!Important;
+}
+
+toolbar #urlbar[focused]:hover {
+  background:none !important;  
+  min-width:350px !important;
+  opacity:1!Important;
+}
+
+toolbar #urlbar:hover {
+  background:url(file:///C:/Portable/FirefoxPortable/Data/profile/chrome/link-hover.png)!important;
+  background-size:18px !important; 
+  background-repeat:no-repeat!important;
+  margin-top: 2px !important;  
+  min-width:350px !important;  
+}
+
+#urlbar {
+  box-shadow:none!Important;
+}
+
+toolbar #urlbar-container {
+  max-width:20px !important;
+  box-sizing:border-box!Important;
+  background:none !important;
+  z-index:1!important;
+  position:relative;
 }

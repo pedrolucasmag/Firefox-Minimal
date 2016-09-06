@@ -2,4 +2,4 @@ You need [Prospector - Oneliner](https://addons.mozilla.org/en-US/firefox/addon/
 
 Also disable page suggestion.
 
-![alt tag](https://u.pomf.is/ubwuvv.mp4)
+![alt tag](http://imgur.com/IQhaKEG)

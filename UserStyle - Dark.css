@@ -52,6 +52,7 @@
 }
 /* remove disabled back button border */
 
+
 #back-button#back-button#back-button>image.toolbarbutton-icon {
     box-shadow: none !important;
 }
@@ -243,10 +244,19 @@ nav-bar,
     background-color: rgb(32, 34, 45) !important;
     color: rgb(190, 180, 170) !important;
 }
+
 #urlbar ::-moz-selection {
 background: rgb(32, 34, 45); /*The background colour*/
 color: rgb(114, 161, 156); /*The text colour*/
 } 
+
+/* Nav Bar Border */
+
+    #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme) {
+        border: 1px solid #1b1b1b !important;
+
+    }
+
 /*===============================================
 HIDE ANNOYING ELEMENTS
 ===============================================*/
@@ -295,6 +305,13 @@ toolbarbutton dropmarker,
     -moz-transition-timing-function: ease-out;
     font-size: 10px;
 }
+/* Remove Nav Bar Text Box  */
+/* navbar */
+
+.textbox-input-box.urlbar-input-box, #nav-bar {
+ border: none !important;   
+}
+
 /* urlbar border tweaks */
 
 #urlbar {
@@ -547,7 +564,7 @@ html div scrollbar {
     -moz-margin-start: 0!important;
 }
 
-/** Normal Addres Bar **/
+/*  Normal Address Bar
 
 toolbar #urlbar-container,
 toolbar #urlbar {
@@ -583,8 +600,9 @@ toolbar #urlbar-container {
     z-index: 1!important;
     position: relative;
 **/
-    /** Address Bar as Icon **/
-/**
+
+ /* Address Bar as Icon  **/
+
 toolbar #urlbar-container, toolbar #urlbar {
   min-width: unset !important;
   width: unset !important;

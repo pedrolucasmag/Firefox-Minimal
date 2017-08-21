@@ -1,0 +1,7 @@
+/** About Blank Color **/
+
+@-moz-document url("about:newtab") {
+    * {
+        background-color: rgb(32, 34, 45);
+    }
+}

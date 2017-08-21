@@ -1,9 +1,21 @@
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /* Compactfox by 7x3 !! */
 
-/* Remove Oneliner Search Button */
+/* Remove Oneliner Search and Reload Button */
 #TabsToolbar > toolbarbutton:nth-child(2) {
     display:none !important;
+}
+
+#TabsToolbar > toolbarbutton:nth-child(4) {
+    display:none !important;
+}
+
+
+/* Remove Go / reload / Stop button */
+#urlbar-go-button,
+#reload-button,
+#stop-button {
+    display: none !important;
 }
 
 /* Remove Back and Forward button when there's nothing to go to */
@@ -29,7 +41,6 @@
 /* Change the big round forward button for a smaller rectangular one */
 
 :root #forward-button > .toolbarbutton-icon {
-    -moz-image-region: rect(0, 72px, 18px, 54px);
     border-radius: 2px 0 0 2px !important;
     padding: 2px !important;
     margin-left: 2px !important;
@@ -51,7 +62,6 @@
     box-shadow: none !important;
 }
 /* remove disabled back button border */
-
 
 #back-button#back-button#back-button>image.toolbarbutton-icon {
     box-shadow: none !important;
@@ -173,6 +183,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled] {
     display: none;
 }
+
 /* Tab Size and Color */
 
 .tabbrowser-tab:not([pinned]) {
@@ -324,8 +335,10 @@ toolbarbutton dropmarker,
 /* Tabs toolbar tab close button (Fx31+) */
 
 #TabsToolbar .close-icon > .toolbarbutton-icon {
-    width: 16px !important;
+    width: 15px !important;
+    opacity: 0.5;
 }
+
 /* Windows 10 url bar tweaking */
 
 #main-window[fx40plus="true"]:not([fx42plus="true"])[defaultfxtheme="true"] #notification-popup-box[hidden] + * {
@@ -427,36 +440,29 @@ toolbarbutton dropmarker,
     opacity: 0.25;
 }
 #main-window[sizemode="maximized"] #titlebar-min {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white) !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
 #main-window[sizemode="maximized"] #titlebar-max {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore-white) !important;
     padding-left: 7px !important;
 }
 #main-window[sizemode="maximized"] #titlebar-close {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white) !important;
     padding-right: 1px !important;
     padding-left: 1px !important;
 }
 #main-window[sizemode="normal"] #titlebar-min {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white) !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
 #main-window[sizemode="normal"] #titlebar-max {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#maximize-white) !important;
     padding-left: 7px !important;
 }
 #main-window[sizemode="normal"] #titlebar-close {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white) !important;
     padding-right: 1px !important;
     padding-left: 1px !important;
 }
 #main-window[sizemode="normal"] #titlebar-close:hover,
 #main-window[sizemode="maximized"] #titlebar-close:hover {
-    list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white) !important;
     background: transparent !important;
 }
 #main-window[sizemode="normal"] .titlebar-button:hover,
@@ -477,13 +483,7 @@ toolbarbutton dropmarker,
 #main-window[sizemode="maximized"] #titlebar-close:hover:active {
     background-color: hsl(0, 0, 0);
 }
-/** About Blank Color **/
 
-@-moz-document url("about:newtab") {
-    * {
-        background-color: rgb(32, 34, 45);
-    }
-}
 /** Remove Newtab Customize Button **/
 
 #newtab-customize-button {
@@ -494,11 +494,7 @@ toolbarbutton dropmarker,
 .tab-throbber[progress] {
     list-style-image: url("file:///C:/Portable/FirefoxPortable/Data/profile/chrome/loading.png") !important;
 }
-:-moz-any(#back-button,
-#forward-button),
-#bookmarks-menu-button > .dropmarker-icon {
-    list-style-image: url(chrome://browser/skin/Toolbar-inverted.png) !important;
-}
+
 /* Background color of the toolbox and removes a white lite at the bottom of it */
 
 #navigator-toolbox::after {
